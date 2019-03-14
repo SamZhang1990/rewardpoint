@@ -89,7 +89,6 @@
 	<modules>
 		<module>rewardpoint_common</module>
 		<module>rewardpoint_base</module>
-		<module>rewardpoint_recruit</module>
 		<module>rewardpoint_qa</module>
 		<module>rewardpoint_article</module>
 		<module>rewardpoint_spit</module>
