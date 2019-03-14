@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: rewardpoint-manager
+      profile: dev
+      label: master
+      uri: http://192.168.43.110:12000
