@@ -94,7 +94,6 @@
 		<module>rewardpoint_article</module>
 		<module>rewardpoint_spit</module>
 		<module>rewardpoint_search</module>
-		<module>rewardpoint_rabbitmqtest</module>
 		<module>rewardpoint_user</module>
 		<module>rewardpoint_sms</module>
 		<module>rewardpoint_eureka</module>
