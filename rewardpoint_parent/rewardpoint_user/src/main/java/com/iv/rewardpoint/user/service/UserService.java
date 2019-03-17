@@ -17,6 +17,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
+import com.codingapi.txlcn.tc.annotation.TxTransaction;
+import com.iv.rewardpoint.user.client.BaseClient;
 import com.iv.rewardpoint.user.dao.UserDao;
 import com.iv.rewardpoint.user.pojo.User;
 
@@ -48,6 +51,9 @@ public class UserService {
 	@Autowired
 	private HttpServletRequest request;
 	
+	@Autowired
+	private BaseClient baseClient;
+	
 	public void updateFanscountAndFollowcount(int x, String userid, String friendid) {
 		userDao.updateFanscount(x, friendid);
 		userDao.updateFollowcount(x, userid);
@@ -73,7 +79,9 @@ public class UserService {
 		userDao.save(user);
 	}
 
+	@LcnTransaction
 	public List<User> findAll() {
+		baseClient.findById("1");
 		return userDao.findAll();
 	}
 

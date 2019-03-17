@@ -100,5 +100,6 @@
 		<module>rewardpoint_config</module>
 		<module>rewardpoint_manager</module>
 		<module>rewardpoint_web</module>
+		<module>txlcn-tm</module>
 	</modules>
 </project>

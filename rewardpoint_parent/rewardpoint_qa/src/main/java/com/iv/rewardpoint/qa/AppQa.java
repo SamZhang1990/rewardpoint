@@ -7,6 +7,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
+import com.codingapi.txlcn.tc.config.EnableDistributedTransaction;
+
 import util.IdWorker;
 import util.JwtUtil;
 
@@ -14,6 +16,7 @@ import util.JwtUtil;
 @EnableEurekaClient
 @EnableDiscoveryClient
 @EnableFeignClients
+@EnableDistributedTransaction
 public class AppQa {
 	
 	public static void main(String[] args) {

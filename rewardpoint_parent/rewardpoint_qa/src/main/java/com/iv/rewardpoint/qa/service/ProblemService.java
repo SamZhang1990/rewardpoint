@@ -9,6 +9,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.codingapi.txlcn.tc.annotation.TxTransaction;
+import com.iv.rewardpoint.qa.client.BaseClient;
 import com.iv.rewardpoint.qa.dao.ProblemDao;
 import com.iv.rewardpoint.qa.pojo.Problem;
 
@@ -23,6 +25,9 @@ public class ProblemService {
 	
 	@Autowired
 	private IdWorker idWorker;
+	
+	@Autowired
+	private BaseClient baseClient;
 	
 	public Page<Problem> newList(String labelId, int page, int size) {
 		Pageable pageable = PageRequest.of(page - 1, size);
@@ -39,7 +44,10 @@ public class ProblemService {
 		return problemDao.waitList(labelId, pageable);
 	}
 
+	@Transactional
+	@TxTransaction
 	public List<Problem> findAll() {
+		baseClient.findById("1");
 		return problemDao.findAll();
 	}
 
